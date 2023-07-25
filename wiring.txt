@@ -1,0 +1,5 @@
+wiring - nucleo_h723gz:
+    ILI9341:
+    sck, mosi, miso - pa_5, pb_5, pa_6
+    cs, dc, rst - pd_14, pd_15, pf_3
+    bl - pc_6

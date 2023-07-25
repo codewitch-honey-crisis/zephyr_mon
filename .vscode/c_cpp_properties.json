@@ -1,0 +1,43 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.22000.0",
+            "compilerPath": "cl.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-msvc-x64"
+        },
+        {
+            "name": "ARM",
+            "includePath": [
+                "C:/Users/gazto/zephyrproject/**",
+                "C:/Users/gazto/zephyrproject/zephyr/**",
+                "${workspaceFolder}/**",
+                "C:/Users/gazto/zephyrproject/htcw_bits/include",
+                "C:/Users/gazto/zephyrproject/htcw_io/include",
+                "C:/Users/gazto/zephyrproject/htcw_ml/include",
+                "C:/Users/gazto/zephyrproject/htcw_data/include",
+                "C:/Users/gazto/zephyrproject/htcw_gfx/include",
+                "C:/Users/gazto/zephyrproject/htcw_uix/include",
+                "${workspaceFolder}"
+            ],
+            "defines": [],
+            "windowsSdkVersion": "10.0.22000.0",
+            "compilerPath": "C:/mingw64/bin/g++.exe",
+            "cStandard": "c99",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "windows-gcc-arm64",
+            "compileCommands": "C:/Users/gazto/zephyrproject/zephyr/build/compile_commands.json"
+        }
+    ],
+    "version": 4
+}
