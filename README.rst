@@ -8,6 +8,8 @@ Overview
 
 This project is a port of esp_mon2 https://github.com/codewitch-honey-crisis/esp_mon2 to zephyr rtos
 
+See this article https://www.codeproject.com/Articles/5365397/Porting-EspMon-to-ZephyrOS-on-a-STM32-boards-or-ot
+
 This project requires the PC .NET companion application shipped with that project.
 
 .. _zephyr-mon-requirements:
