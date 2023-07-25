@@ -6,6 +6,10 @@
 	chosen {
 		zephyr,display = &ili9340;
 	};
+	zephyr,user {
+		// backlight
+		bl_gpios = <&gpioc 6 GPIO_ACTIVE_HIGH>;
+	};	
 };
 &usart3 {
 	compatible = "st,stm32-usart", "st,stm32-uart";
@@ -17,14 +21,13 @@
 	cs-gpios = <&gpioa 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 	ili9340: ili9340@0 {
 		compatible = "ilitek,ili9340";
-		spi-max-frequency = <40000000>;
+		spi-max-frequency = <20000000>;
 		reg = <0>;
 		reset-gpios = <&gpiof 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         cmd-data-gpios = <&gpiod 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 		width = <320>;
 		height = <240>;
 		pixel-format = <ILI9XXX_PIXEL_FORMAT_RGB565>;
-		backlight-gpios = <&gpioc 6 GPIO_ACTIVE_HIGH>;
 		rotation = <270>;
 		frmctr1 = [00 18];
 		pwctrl1 = [23 00];

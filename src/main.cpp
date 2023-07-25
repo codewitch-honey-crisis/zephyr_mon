@@ -1,5 +1,6 @@
 #include <zephyr/kernel.h>
 #include <zephyr/device.h>
+#include <zephyr/drivers/gpio.h>
 #include <zephyr/drivers/i2c.h>
 #include <zephyr/drivers/uart.h>
 #include <zephyr/drivers/display.h>
@@ -16,6 +17,7 @@ extern "C" int main(void);
 using namespace gfx;
 using namespace uix;
 
+static const struct gpio_dt_spec lcd_bl = GPIO_DT_SPEC_GET(ZEPHYR_USER_NODE, bl_gpios);
 static const struct device* uart_dev = DEVICE_DT_GET(DT_ALIAS(command_serial));
 
 static uint32_t get_ms() {
@@ -43,14 +45,7 @@ static size_t serial_read_bytes(uint8_t* buf, size_t len) {
 	}
 	return result;
 }
-static uint8_t serial_read_byte() {
-	while(1) {
-		int i = serial_getch();
-		if(i!=-1) {
-			return i;
-		}
-	}
-}
+
 static bool serial_read_status(read_status_t* out_status) {
 	if(4>serial_read_bytes((uint8_t*)out_status,sizeof(read_status_t))) {
 		return false;
@@ -74,7 +69,16 @@ int main(void)
 		printf("Could not get UART. Aborting\n");
 		return -1;
 	}
-
+	if (!gpio_is_ready_dt(&lcd_bl)) {
+		printf("Could not get backlight GPIO. Aborting\n");
+		return -1;
+	}
+	ret = gpio_pin_configure_dt(&lcd_bl, GPIO_OUTPUT_ACTIVE);
+	if (ret < 0) {
+		return -1;
+	}
+	gpio_pin_set_dt(&lcd_bl, 1);
+	
 	if (display_dev == NULL) {
 		printf("Device not found.  Aborting.\n");
 		return -1;
