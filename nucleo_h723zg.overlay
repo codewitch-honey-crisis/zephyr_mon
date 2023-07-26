@@ -28,7 +28,7 @@
 		width = <320>;
 		height = <240>;
 		pixel-format = <ILI9XXX_PIXEL_FORMAT_RGB565>;
-		rotation = <270>;
+		rotation = <90>;
 		frmctr1 = [00 18];
 		pwctrl1 = [23 00];
 		vmctrl1 = [3e 28];
