@@ -25,5 +25,5 @@ Your board must:
 
 Supported Boards
 *************
-Nucleo H723ZG
-Nucleo F767ZI
+#. Nucleo H723ZG
+#. Nucleo F767ZI
