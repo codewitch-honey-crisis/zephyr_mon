@@ -21,7 +21,7 @@ Your board must:
 
 #. Have a UART which must be bridged to your PC somehow. By default it uses the ST-Link virtual COM port. You can modify it.
 #. Have a screen - ILI9341 recommended, but you can use your own with some modifications
-#. Have a board overlay that maps the hardware on your device. Again, you'll have to modify it to do this.
+#. Have a board overlay that maps the hardware on your device. Again, you'll have to modify it to add to the supported boards.
 
 Supported Boards
 *************
