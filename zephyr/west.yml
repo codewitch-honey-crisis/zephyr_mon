@@ -1,0 +1,22 @@
+manifest:
+  projects:
+    - name: htcw_bits
+      url: https://github.com/codewitch-honey-crisis/htcw_bits
+      revision: master
+    - name: htcw_data
+      url: https://github.com/codewitch-honey-crisis/htcw_data
+      revision: master
+    - name: htcw_gfx
+      url: https://github.com/codewitch-honey-crisis/gfx
+      revision: master
+    - name: htcw_io
+      url: https://github.com/codewitch-honey-crisis/htcw_io
+      revision: master
+    - name: htcw_ml
+      url: https://github.com/codewitch-honey-crisis/htcw_ml
+      revision: master
+    - name: htcw_uix
+      url: https://github.com/codewitch-honey-crisis/uix
+      revision: master
+self:
+    path: zephyr_mon
