@@ -1,5 +1,17 @@
 manifest:
+manifest:
+  remotes:
+    - name: zephyr
+      url-base: https://github.com/zephyrproject-rtos
+
   projects:
+    - name: zephyr
+      remote: zephyr
+      revision: main
+      import:
+        name-allowlist:
+          - cmsis
+          - hal_stm32
     - name: htcw_bits
       url: https://github.com/codewitch-honey-crisis/htcw_bits
       revision: master
